@@ -4,86 +4,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DOM Manipulation</title>
 </head>
 
 <body>
+
+
+
+    <style>
+        body {
+            background-color: #0A2E54;
+            color: #F5F5F5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        button{
+            border: 1px dashed  #F5F5F5;
+            background-color: transparent;
+            color: #F5F5F5;
+            padding:10px;
+            transition: 0.2s;
+
+        }
+        button:hover{
+            background-color: #F5F5F5;
+            color: #0A2E54;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+
+    </style>
+    <h1>DOM Manipulation</h1>
+
+
+    <div class="" style="max-width: 500px;">
+        <!-- if click button change content -->
+        <!-- can use class name or id -->
+        <div class="" style="text-align: center;">
+            <button id="button" >Change Paragraph content</button>
+        </div>
+        <!-- content -->
+        <p id="paragraph" style="text-align: center;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim nesciunt impedit ratione neque? Minus nesciunt
+            totam ipsum expedita ullam adipisci perferendis fugiat, excepturi dolores, facilis necessitatibus at libero,
+            temporibus et.</p>
+    </div>
+
+
+
+
+
     <script>
 
-/*
-        let mark = 102;
-        if (mark > 90) {
-            console.log("A+");
-        } else if (mark > 80) {
-            console.log("A");
-        } else if (mark > 70) {
-            console.log("B+");
-        } else if (mark > 60) {
-            console.log("B");
-        } else if (mark > 50) {
-            console.log("C+");
-        } else if (mark > 40) {
-            console.log("C");
-        } else if (mark > 100) {
-            console.log("Invalid");
-        }
-        else {
-            console.log("failed");
-        }
-*/
+        // step - 1
+        document.getElementById("button") // id name "button"
+        // step - 2
+        console.log(document.getElementById("button"))
+        //step - 3
+        // declare a variable 
+        const button = document.getElementById("button");
+        // step - 4
+        document.getElementById("paragraph");
+        // step - 5
+        console.log(document.getElementById("paragraph"))
+        //step - 6
+        // declare a variable 
+         const paragraph = document.getElementById("paragraph");
 
-
-
-/*
-        let mark = 102;
-switch (true) {
-    case mark > 90:
-        console.log("A+");
-        break;
-    case mark > 80:
-        console.log("A");
-        break;
-    case mark > 70:
-        console.log("B+");
-        break;
-    case mark > 60:
-        console.log("B");
-        break;
-    case mark > 50:
-        console.log("C+");
-        break;
-    case mark > 40:
-        console.log("C");
-        break;
-    default:
-        console.log("failed");
-}
-
-*/
-
-let num = 5
-
-if(num>=0){
-    if(num === 5){
-        console.log('number is', num);
-    }else if(num === 10){
-        console.log('number is', num);
-    }else{
-        console.log('positive number');
-    }
-
-}else{
-    if(num === -5){
-        console.log('number is', num);
-    }else if(num === -10){
-        console.log('number is', num);
-    }else{
-        console.log('negative number');
-    }
-}
+        // finally click button , change paragraph content
+        button.addEventListener("click",function (params) {
+            paragraph.innerHTML = 'You have clicked'
+        }) 
+        // addEventListener is method , 
+        //click is a event
+        // innerHTML = to use change content
 
 
     </script>
+
 </body>
 
 </html>
