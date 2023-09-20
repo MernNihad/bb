@@ -4,86 +4,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Project</title>
 </head>
 
 <body>
+
+    <!-- Project Section -->
+    <section class="project">
+
+        <!-- heading ------------- -->
+        <div class="project-heading">
+            <span>Let's See My Works</span>
+            <h3>My Projects</h3>
+        </div>
+
+
+        <!-- filter ------------ -->
+        <ul class="project-filter">
+            <li class="list project-filter-active" data-filter="all">All</li>
+            <li class="list" data-filter="app">Application</li>
+            <li class="list" data-filter="design">App Design</li>
+            <li class="list" data-filter="web">Website Design</li>
+            <li class="list" data-filter="ai">AI</li>
+        </ul>
+
+        <!-- project container -->
+        <div class="project-container">
+            <!-- box  -->
+            <a class="project-box web">
+                <img src="https://images.pexels.com/photos/1485894/pexels-photo-1485894.jpeg?auto=compress&cs=tinysrgb&w=600" alt="work">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor consectetur soluta sapiente, porro facilis eligendi necessitatibus dolorem repudiandae quaerat corrupti a sit enim odit ullam sunt quasi dignissimos sed voluptatem.</p>
+            </a>
+            <a class="project-box ai">
+                <img src="https://images.pexels.com/photos/1525041/pexels-photo-1525041.jpeg?auto=compress&cs=tinysrgb&w=600" alt="app">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor consectetur soluta sapiente, porro facilis eligendi necessitatibus dolorem repudiandae quaerat corrupti a sit enim odit ullam sunt quasi dignissimos sed voluptatem.</p>
+            </a>
+            <a class="project-box design">
+                <img src="https://images.pexels.com/photos/2049422/pexels-photo-2049422.jpeg?auto=compress&cs=tinysrgb&w=600" alt="website">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor consectetur soluta sapiente, porro facilis eligendi necessitatibus dolorem repudiandae quaerat corrupti a sit enim odit ullam sunt quasi dignissimos sed voluptatem.</p>
+            </a>
+            <a class="project-box app">
+                <img src="https://images.pexels.com/photos/459203/pexels-photo-459203.jpeg?auto=compress&cs=tinysrgb&w=600" alt="work">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor consectetur soluta sapiente, porro facilis eligendi necessitatibus dolorem repudiandae quaerat corrupti a sit enim odit ullam sunt quasi dignissimos sed voluptatem.</p>
+            </a>
+            <a class="project-box web">
+                <img src="https://images.pexels.com/photos/1379640/pexels-photo-1379640.jpeg?auto=compress&cs=tinysrgb&w=600" alt="app">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor consectetur soluta sapiente, porro facilis eligendi necessitatibus dolorem repudiandae quaerat corrupti a sit enim odit ullam sunt quasi dignissimos sed voluptatem.</p>
+            </a>
+            <!-- ------------- -->
+        </div>
+
+    </section>
+
+
+    <!-- JQuery CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
     <script>
+        // SELECT AN ELEMENT THEN ADD CLASS REMOVE CLASS FROM SIBLING
+        $(document).on("click",".project-filter li", function(){
+            $(this).addClass("project-filter-active").siblings().removeClass("project-filter-active")
+        })
+        // ----------------------------------------------------
 
-/*
-        let mark = 102;
-        if (mark > 90) {
-            console.log("A+");
-        } else if (mark > 80) {
-            console.log("A");
-        } else if (mark > 70) {
-            console.log("B+");
-        } else if (mark > 60) {
-            console.log("B");
-        } else if (mark > 50) {
-            console.log("C+");
-        } else if (mark > 40) {
-            console.log("C");
-        } else if (mark > 100) {
-            console.log("Invalid");
-        }
-        else {
-            console.log("failed");
-        }
-*/
-
-
-
-/*
-        let mark = 102;
-switch (true) {
-    case mark > 90:
-        console.log("A+");
-        break;
-    case mark > 80:
-        console.log("A");
-        break;
-    case mark > 70:
-        console.log("B+");
-        break;
-    case mark > 60:
-        console.log("B");
-        break;
-    case mark > 50:
-        console.log("C+");
-        break;
-    case mark > 40:
-        console.log("C");
-        break;
-    default:
-        console.log("failed");
-}
-
-*/
-
-let num = 5
-
-if(num>=0){
-    if(num === 5){
-        console.log('number is', num);
-    }else if(num === 10){
-        console.log('number is', num);
-    }else{
-        console.log('positive number');
-    }
-
-}else{
-    if(num === -5){
-        console.log('number is', num);
-    }else if(num === -10){
-        console.log('number is', num);
-    }else{
-        console.log('negative number');
-    }
-}
-
-
+        // for project / filter ----------------------------
+        $(document).ready(function(){
+            $(".list").click(function(){
+                const value = $(this).attr("data-filter");
+                if(value  == "all" ){
+                    $(".project-box").show('1000')
+                }else{
+                    $(".project-box").not(`.${value}`).hide("1000")
+                    $(".project-box").filter(`.${value}`).show("1000")
+                }
+            })
+        })
+        // -----------------------------------------
     </script>
 </body>
 
 </html>
+
+
+
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    ul{
+        list-style-type: none;
+    }
+
+    /* PROJECT  */
+    .project{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .project .project-heading{
+        flex-direction: column;
+        gap: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        margin-top: 3rem;
+    }
+    .project-filter{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid rgba(237, 237, 237, 0.6);
+        padding: 5px 8px;
+
+    }
+    .project-filter > li{
+        
+        padding: 6px 10px;
+        border-radius: 6px;
+        font-size: 1rem;
+        color: #9b9b9b;
+        letter-spacing: 0.5px;
+        font-weight: 400;
+    }
+    .project-filter-active{
+        background-color: #f0f0f0;
+        color: #272727;
+    }
+    .project-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .project-box{
+        width: 100%;
+        max-width: 330px;
+        /* flex: ; */
+        margin: 20px;
+        border: 1px solid #eeeeee;
+        padding: 10px;
+    }
+    .project-box img{
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    /* ---------------- */
+</style>
