@@ -21,7 +21,12 @@ const getInputValue = (event)=>{
 
     // step -6
     // then calling another function
-    createTodo(isValue)
+    
+    if(isValue === ''){
+        alert("empty!")
+    }else{
+        createTodo(isValue)
+    }
 
 }
 
@@ -45,5 +50,8 @@ const createTodo = (isValue)=>{
     // step -10
     // then p dispaly inside display div , display p tag inside display div
     display.appendChild(paragrph);
+
+    input.value = ''
+
 }
 
