@@ -4,85 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM</title>
-    <link rel="stylesheet" href="./index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Product</title>
 </head>
 
 <body>
 
 
-    <form class="form">
-        <input id="input" type="text" placeholder="Type...">
-        <button id="button">Sent</button>
-        <div id="display" class="display">
-            <p>lorem <i class="fa-solid fa-trash fa-fade"></i></p>
+    <div class="" style="width:300px;border:1px solid black;padding:20px;margin:20px">
+        <div class="">
+            <img src="./Page 1.png" style="width: 200px;height:300px" alt="loading...">
         </div>
-    </form>
+        <div class="">
+            <span style="font-weight: bold;font-size: 24px;">Adidas Originals</span>
+            <span style="color: blue;font-size: 20px;">$ 29.99</span>
+        </div>
+        <p style="color: rgba(0, 0, 0, 0.584);padding: 0px;margin: 0px;">Lorem ipsum dolor sit amet.</p>
+        <p>SIZE</p>
+        <p>
+            <a style="color: black;text-decoration: none;background-color: blue;padding: 5px 9px;color: white;border-radius: 40px;" href="">S</a>
+            <a style="color: black;text-decoration: none;background-color: blue;padding: 4px 8px;color: white;border-radius: 40px;" href="">M</a>
+            <a style="color: black;text-decoration: none;background-color: blue;padding: 3px 9px;color: white;border-radius: 40px;" href="">L</a>
+            <a style="color: black;text-decoration: none;background-color: blue;padding: 5px 6px;color: white;border-radius: 40px;" href="">XL</a>
+        </p>
+        <p>COLOUR</p>
+        <input type="color">
+        <input type="color">
+        <input type="color">
+        <br>
+        <button style="background-color: blue;color: white;font-size: 16px;font-weight:bold;padding:10px 20px;border: none;margin: 10px 0px;">BUY NOW</button>
+        <button style="background-color:white;color: blue;font-size: 16px;font-weight:bold;padding:7px 20px;border: none;margin: 10px 0px;border:3px solid blue">ADD TO CART</button>
 
-
-    <script>
-
-
-        let arr = ["name", "nihad", "BMW", 1, true, null, undefined]
-
-
-
-
-        // console.table(arr[0])
-        // console.table(arr[1])
-
-
-        let students = {
-            name: "Shimly",
-            place: "Calicut",
-        }
-
-        let students1 = {
-            name: "Shana",
-            place: "Malappuram",
-        }
-
-        console.log(students)
-        console.log(students1)
-
-
-        let gropOfObj = [
-            {
-                name: "Shimly",
-                place: "Calicut",
-            },
-            {
-                name: "Shana",
-                place: "Malappuram",
-            },
-            "color",
-            true,
-            [
-
-                {
-                    colo:"red"
-                }
-            ]
-            
-        ]
-
-        console.log(gropOfObj)
-
-
-        let arr1 = [1,2,3,4,5]
-        console.log(arr1.toString())
+    </div>
 
 
 
-
-    </script>
-
-
-
-    <!-- <script src="./index.js"></script> -->
 </body>
 
 </html>
